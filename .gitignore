@@ -17,3 +17,4 @@ error-screenshots/
 webpack.generated.js
 src/main/java/com/vaadin/tutorial/crm/backend/service/SenderSms.java
 src/main/java/com/vaadin/tutorial/crm/backend/service/SenderSMSTelstra.java
+src/main/resources/application.properties
