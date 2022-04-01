@@ -1,0 +1,1585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="conr" pageWidth="595" pageHeight="842" columnWidth="547" leftMargin="28" rightMargin="20" topMargin="28" bottomMargin="28" uuid="88836fa6-4f03-4d6d-ac2d-726347a287d9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<parameter name="rental_agreement_id" class="java.lang.Integer"/>
+	<parameter name="hirer_name" class="java.lang.String"/>
+	<parameter name="dob" class="java.lang.String"/>
+	<parameter name="licence_no" class="java.lang.String"/>
+	<parameter name="issued_in" class="java.lang.String"/>
+	<parameter name="expiry_date" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="phone" class="java.lang.String"/>
+	<parameter name="mobile" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="make" class="java.lang.String"/>
+	<parameter name="model" class="java.lang.String"/>
+	<parameter name="licence_plate" class="java.lang.String"/>
+	<parameter name="kms_out" class="java.lang.Long"/>
+	<parameter name="kms_in" class="java.lang.Long"/>
+	<parameter name="fuel_type" class="java.lang.String"/>
+	<parameter name="fuel_out" class="java.lang.Integer"/>
+	<parameter name="fuel_in" class="java.lang.Integer"/>
+	<parameter name="start_date_time" class="java.lang.String"/>
+	<parameter name="pickup_location" class="java.lang.String"/>
+	<parameter name="return_date_time" class="java.lang.String"/>
+	<parameter name="return_location" class="java.lang.String"/>
+	<parameter name="balance_due" class="java.lang.Float"/>
+	<parameter name="counter_record" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Gabriel\\Proyectos\\Fabio\\reportesMios\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="listaImpuestos" class="java.util.List"/>
+	<field name="listaPagos" class="java.util.List"/>
+	<title>
+		<band height="85">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="85" height="85" uuid="6c266ed1-f869-400f-a09b-a9bc0f62f7df"/>
+				<imageExpression><![CDATA[$P{SUBREPORT_DIR}+"LOGO.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="364" y="30" width="174" height="50" uuid="8f9625b4-f333-416f-bbe5-e00cb2265ffd"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[8 hoxton park rd
+Liverpool NSW 2170
+Tel: 0447024561
+Email: fabiopiantino@yahoo.com.au]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="0" width="100" height="15" uuid="afa913e6-7a8f-43d1-ac92-308ec321970b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Certified Autos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="313" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}==1]]></printWhenExpression>
+			<rectangle>
+				<reportElement x="0" y="109" width="352" height="140" uuid="2e0dc322-c7ba-42e7-a6bf-ee4a7a0081f7"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="4" width="538" height="20" uuid="ff4fb59a-b6a2-4770-a838-6c9d0614639b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Rental Agreement #:                           " +$P{rental_agreement_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="24" width="353" height="20" uuid="fd0c443e-040f-4f73-9eda-d51e16e05e35">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hirer Name: " +$P{hirer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="24" width="185" height="20" uuid="8644eb0b-03b7-4194-9aee-95a6cd528e46">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DOB: " +$P{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="44" width="180" height="20" uuid="65a940bf-4cda-44bb-8786-704773f56c26">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Licence No.: " +$P{licence_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="44" width="185" height="20" uuid="0785b14e-013f-4767-a8fa-1bffa0b6e023">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Expiry Date: " +$P{expiry_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="44" width="173" height="20" uuid="851eecf6-0df7-45f2-9b82-549ff0ea9ecd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Issued In: " +$P{issued_in}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="64" width="538" height="20" uuid="8de66b79-38d6-44eb-8e90-2517d3942e4a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Address: " +$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="84" width="180" height="20" uuid="6111df07-253e-4dbc-a88b-27af4ca14693">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phone: " +$P{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="84" width="172" height="20" uuid="11dd2887-3380-43e3-b1e6-38b36d8b23a8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Mobile: " +$P{mobile}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="84" width="185" height="20" uuid="53689006-0186-4d22-8165-8e1cf1f86095">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Email: " +$P{email}]]></textFieldExpression>
+			</textField>
+			<image vAlign="Middle">
+				<reportElement x="4" y="114" width="230" height="130" uuid="4fbc3171-c052-4662-b99b-3ba0da6f4ffe"/>
+				<imageExpression><![CDATA[$P{SUBREPORT_DIR}+"car.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="355" y="109" width="183" height="140" uuid="6615e64a-3f6a-4c5e-ba59-730a37d5593d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="237" y="114" width="106" height="18" uuid="27cb56a4-16e9-4589-8c1d-1577b9ada0e1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Simbols to be used:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="132" width="106" height="14" uuid="c647f8f6-e78c-4473-85c8-301079050ab9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[X   CHIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="146" width="106" height="14" uuid="deb23212-a2b1-4f8d-858a-2287ffdb2b44">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[O   DENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="160" width="106" height="14" uuid="e5619acf-4a07-4d9f-a4a2-e8980129bcc0"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[--   SCRATCH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="174" width="106" height="14" uuid="58a080e6-22cd-42e8-a6db-b3d4e19f4fe4"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[0   SCUFF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="198" width="106" height="46" uuid="c97c20d8-a6e0-4c64-9550-03251391f8de">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Accessories: ___________
+_______________________
+_______________________
+_______________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="115" width="173" height="15" uuid="cfa8f0b6-2d13-41f9-840d-ca21dfa9e223">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Vehicle Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="135" width="58" height="14" uuid="f0f86178-9044-4a19-ad21-75efc8a75bd6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Make:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="151" width="58" height="14" uuid="922aa4aa-46aa-471e-9e2a-faaa23cae1db">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Model:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="167" width="58" height="14" uuid="95302eb8-2e1e-4fe8-b725-43d366ef9885">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Licence Plate:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="183" width="58" height="14" uuid="2392e774-9949-4d50-be42-8f9ca8e928ba">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Kms Out:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="199" width="58" height="14" uuid="fa4f9f8d-965f-468e-9969-7decfd0165e1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Fuel Type:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="215" width="58" height="14" uuid="7cd35e81-566e-494d-9b76-187977041d55">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Fuel Out:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="135" width="115" height="14" uuid="c08a67da-407e-4658-b9a4-9526a501df54"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{make}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="151" width="115" height="14" uuid="16736cd4-452f-44f1-b933-13137053bccf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="167" width="115" height="14" uuid="8fa8884e-ea3f-4184-981e-c05a32038b17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{licence_plate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="183" width="46" height="14" uuid="f222fbf4-79d9-496c-bc36-1cbb92fd535a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{kms_out}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="463" y="183" width="34" height="14" uuid="33b80ca8-e2f5-425b-a408-91e39fb9c48f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Kms In:]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="497" y="183" width="35" height="14" uuid="c97c428e-ffee-4acd-be11-72785a349c7c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{kms_in}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="199" width="115" height="14" uuid="d7959387-be41-44d9-a27c-a94e00e2f50d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fuel_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="215" width="46" height="14" uuid="ff8cea64-25d1-4067-8ce4-2de6dc64ded8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fuel_out}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="463" y="215" width="34" height="14" uuid="b617f365-ac80-4f00-b458-413f3627f0cb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Fuel In:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="497" y="215" width="35" height="14" uuid="c46a9e81-4b72-45da-ad2f-d932fad947ef"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fuel_in}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="253" width="537" height="50" uuid="f3efe0fb-817c-4fdc-85c9-ee8c514966db"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="255" width="78" height="15" uuid="981c45f7-84b0-4041-a598-d04f813def47">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Rental Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="271" width="78" height="14" uuid="94e2ead1-239b-4578-a300-83f67683963e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Start Date / Time:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="271" width="150" height="14" uuid="5f9714c2-70a7-43ce-96ff-d0968a803e46"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{start_date_time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="285" width="78" height="14" uuid="8f718f08-09ee-4e3d-8ad0-32891990bc76">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Return Date / Time:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="285" width="150" height="14" uuid="90ab3b06-1b41-46e3-aa32-afd33f770016"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{return_date_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="271" width="228" height="14" uuid="5ed693d5-e4dd-4c4f-b09f-cc22cb025688"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pickup_location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="285" width="228" height="14" uuid="34a5505f-7cde-42f9-9e7e-c6400dc93fc3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{return_location}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="234" y="271" width="70" height="14" uuid="3b6be779-54a9-4e19-ae9d-ee6e04ed8bbb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Pickup Location:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="285" width="70" height="14" uuid="4d929fe5-7e8e-40ab-841b-559e7b96a912">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Return Location:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="30">
+			<subreport>
+				<reportElement x="0" y="0" width="537" height="30" uuid="e29f612e-1b6f-4c64-be42-f41ea6a751ff"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listaImpuestos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"SubReportImpuestos.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="41">
+			<subreport>
+				<reportElement x="1" y="7" width="537" height="30" uuid="47e1349a-b172-466e-9ca6-d7cc3bd2562a"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listaPagos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"SubReportPagos.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="24">
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="4" width="417" height="20" uuid="bb2b77f7-fa65-448a-963c-4cfd41a44db5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Balance Due]]></text>
+			</staticText>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="417" y="4" width="121" height="20" uuid="625d5b5b-41ee-40dd-8015-28f8d72d3bf7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4" rightPadding="4">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["AUD $" + $P{balance_due}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="150">
+			<staticText>
+				<reportElement x="2" y="3" width="534" height="147" uuid="c1750b65-0770-4241-9f7c-c1ef131e0ae5"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[
+				
+				
+	SIGN: ____________________________________
+
+
+DATE__________________
+
+
+CERTIFIED AUTOS
+Terms & Conditions
+				
+				]]></text>
+			</staticText>
+		</band>
+		<band height="79">
+			<staticText>
+				<reportElement x="5" y="23" width="536" height="56" uuid="3053ded5-a11b-4255-9fef-9cdf169ca10a"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[1.1       When You rent a Vehicle from Us the contract (Rental Contract) You have with Us consists of two separate documents. They are:
+(a) the agreement (Rental Agreement) You have signed to rent the Vehicle from Us; and
+(b) these rental Terms and Conditions (Terms and Conditions).
+1.2       The date of the Rental Contract is the date shown in the Rental Agreement.
+				]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="4" width="535" height="16" uuid="7e788419-0f31-49c0-8b92-8bdd17ccd1fb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[1          Introduction]]></text>
+			</staticText>
+		</band>
+		<band height="99">
+			<staticText>
+				<reportElement x="2" y="3" width="532" height="96" uuid="08fbd175-d7ba-4c65-8432-23d47aceb862"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[1.3       The Rental Contract is governed by the laws of NSW and You agree that courts in that state have non-exclusive jurisdiction to determine any dispute that arises between You and Us.
+1.4       We may fit a GPS Device to the Vehicle to enable Us to track the Vehicle while it is out of Our
+possession. When you sign these Terms and Conditions You authorise Us to use the GPS Device to track the Vehicle until it is returned to Us.
+1.5       The Australian Consumer Law applies to the Rental Contract and it provides You with rights that are not excluded, restricted or modified by the Rental Contract and any provision in this contract is subject to the
+specific protections and guarantees in that and any corresponding Federal, State or Territory legislation.
+]]></text>
+			</staticText>
+		</band>
+		<band height="110">
+			<staticText>
+				<reportElement x="-1" y="4" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[2          Who may drive the Vehicle?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="23" width="535" height="87" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[2.1       Only You or an Authorised Driver can drive the Vehicle.
+2.2       It is a Major Breach of the Rental Contract if You let anyone who is unauthorised drive the Vehicle. If there is a Major Breach of the Rental Contract there is no cover for You, the Authorised Driver or the unauthorised driver for any Damage, theft of the Vehicle or Third Party Loss.
+2.3       We set a minimum age limit for those renting Our Vehicles. You and any Authorised Driver must be at least 21 years of age and have no less than 12 months driving experience, unless We have agreed to a variation of that restriction before the Start of the Rental and it is shown in the Rental Agreement.
+]]></text>
+			</staticText>
+		</band>
+		<band height="90">
+			<staticText>
+				<reportElement x="2" y="3" width="530" height="87" uuid="bf50dd14-db04-4ecc-8359-3cde937ecc8c"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[2.4       You and any Authorised Driver must also have a valid licence to drive the class of Vehicle which is issued in an Australian state or territory or an international licence (with an valid International Driving Permit if Your licence is not issued in English) appropriate for the class of the Vehicle and not subject to any restriction or condition. Learner drivers and provisional and probationary licence holders are not acceptable and must not drive the Vehicle.
+2.5       The Vehicle must not be driven if Your licence or the licence of any Authorised Driver has been cancelled within 2 years of the date of the Rental Agreement.
+]]></text>
+			</staticText>
+		</band>
+		<band height="90">
+			<staticText>
+				<reportElement x="2" y="4" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[3          Prohibited Use]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="20" width="534" height="70" uuid="3850e755-ee29-45c6-9d62-058c7ea19c4a"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[3.1       The Vehicle must not be driven by You or any Authorised Driver:
+(a) if You or any Authorised Driver is intoxicated or under the influence of drugs or alcohol or     has a blood alcohol content or level of drugs present in blood, urine or oral fluid that exceeds the limit set by law;
+(b) recklessly or dangerously; or
+(c) whilst the Vehicle is damaged or unsafe.
+]]></text>
+			</staticText>
+		</band>
+		<band height="130">
+			<staticText>
+				<reportElement x="2" y="0" width="534" height="130" uuid="b5d1a457-04c8-4a48-8156-12159666f60f"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[3.2       You and any Authorised Driver must not:
+(a) fail or refuse to undergo any breath, blood, urine or oral fluid test or drug impairment assessment;
+(b) use the Vehicle:
+(i) for any illegal purpose;
+(ii) to move dangerous, hazardous, inflammable goods or substances that pollute or
+contaminate, in quantities above that used for domestic purposes;
+(iii) to propel or tow another vehicle or a trailer;
+(iv) in connection with the motor trade for experiments, tests, trials or demonstration purposes; or
+(v) in an unsafe or un-roadworthy condition.]]></text>
+			</staticText>
+		</band>
+		<band height="70">
+			<staticText>
+				<reportElement x="0" y="0" width="536" height="70" uuid="b041f63e-daa0-426f-8ea9-e09dd5be5f93"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[3.3       You and any Authorised Driver must not:
+(a)        damage the Vehicle deliberately or recklessly or allow anyone else to do so;
+(b)        modify the Vehicle in any way;
+(c)        sell, rent, lease or dispose of the Vehicle; or
+(d)        register or claim to be entitled to register any interest in the Vehicle under the Personal Property Securities Act 2009.
+]]></text>
+			</staticText>
+		</band>
+		<band height="110">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="110" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[3.4       You and any Authorised Driver must not use the Vehicle to carry:
+(a)        passengers for hire, fare or reward or for rideshare purposes;
+(b)        more than the number of passengers for which the Vehicle is licensed; or
+(c)        any load that exceeds the limits for which the Vehicle was designed, constructed, registered or licenced.
+3.5       You and any Authorised Driver must not:
+(a)          use the Vehicle to transport any pets or animals except assistance animals; or
+(b)        smoke in the Vehicle and You must prevent any passenger from doing so.
+Additional cleaning and deodorising costs must be paid if there is a breach of this clause.
+]]></text>
+			</staticText>
+		</band>
+		<band height="100">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[4          Where the Vehicle cannot be used]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="18" width="531" height="82" uuid="7cef2981-23b6-431b-bff3-67a5f808b102"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[4.1       The Vehicle must never be driven on:
+(a)        an Unsealed Road; or
+(b)        Off Road.
+4.2       The Vehicle must not be used in any area that is prohibited by Us. Prohibited areas include:
+(a)        roads that are prone to flooding or are flooded;
+(c)        beaches, streams, rivers, creeks, dams and floodwaters;
+]]></text>
+			</staticText>
+		</band>
+		<band height="102">
+			<staticText>
+				<reportElement x="1" y="3" width="535" height="99" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[(d)        any road where the police or an authority has issued a warning;
+(e)        any road that is closed; and
+(f)         any road where it would be unsafe to drive the Vehicle.
+4.3 The Vehicle must never be driven or used:
+(a)        outside a radius of 1000 kilometres from the Rental Location; or
+(b)        onto any island that is off mainland Australia, except Bribie Island,
+unless We have given Our prior written permission prior to the Start of the Rental and it is noted on the Rental Agreement.
+]]></text>
+			</staticText>
+		</band>
+		<band height="129">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[5          Your obligations]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="18" width="530" height="111" uuid="6e0921ed-56b9-444d-bf02-f44ae1454bd4"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[5.1       At the Start of the Rental and before collecting the Vehicle You must pay the anticipated Rental Charges and the commitment fee.
+5.2       The commitment fee is fully refundable to You provided that:
+(a)        all amounts due to Us under the Rental Contract have been paid;
+(b)        the Vehicle has been returned to the Rental Location at the date and time set in the Rental agreement;
+(c)        there is no Damage or Third Party Loss;
+(d)        the exterior and interior of the Vehicle are clean;
+(e)        the Vehicle has a full tank of fuel; and
+(f)         there has not been a Major Breach of the Long-Term Rental Contract,
+]]></text>
+			</staticText>
+		</band>
+		<band height="110">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="110" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[5.3       At the Start of the Rental You must also inspect the Vehicle to make sure that any pre-existing damage is noted and shown in the Rental Agreement.
+5.4       At the End of the Rental You must:
+(a)        return the Vehicle:
+(i)         in the same condition it was in at the Start of the Rental, fair wear and tear excepted; and
+(ii)        with a full tank of fuel;
+(b)        pay the balance of the Rental Charges (if any);
+(c)        pay the Damage Excess if there is Damage or Third Party Loss as a result of an Accident or the Vehicle is stolen;
+]]></text>
+			</staticText>
+		</band>
+		<band height="119">
+			<staticText>
+				<reportElement x="1" y="3" width="536" height="116" uuid="7fcafceb-e79d-4418-9521-2eaf030ba452"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[(d)        pay any costs We incur, including extra cleaning costs under clause 3.5, in reinstating the Vehicle to the same condition it was in at the Start of the Rental, fair wear and tear excluded;
+(e)        pay for all Damage arising from a Major Breach of the Rental Contract;
+(f)         pay for all Overhead Damage;
+(g)        pay for all Underbody Damage; and
+(h)        pay for any Damage caused by the immersion of the Vehicle in water.
+5.5       You and any Authorised Driver must pay all tolls, speeding and traffic fines and infringements as well as any fines or charges imposed for parking or using the Vehicle or release of the Vehicle if it has been seized by a regulatory authority.
+]]></text>
+			</staticText>
+		</band>
+		<band height="70">
+			<staticText>
+				<reportElement x="0" y="0" width="534" height="70" uuid="4e9d4d71-0b89-4ef8-add4-530f025d96dd"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[5.6       If You return the Vehicle with less than a full tank of fuel a refuelling charge, in addition to the cost of the fuel, will apply.
+5.7       You must comply with all mandatory seat belt laws and fines may be imposed by the police on any driver or passenger who does not have a seat belt properly adjusted and fastened;
+5.8       You and any Authorised Driver must make sure that the Vehicle is locked when not in use or unattended and the keys or remote control device must be kept in Your possession, or that of any Authorised Driver, at all times.
+]]></text>
+			</staticText>
+		</band>
+		<band height="119">
+			<staticText>
+				<reportElement x="2" y="3" width="539" height="116" uuid="40a2db3e-48b2-402d-825d-e50b2c924da1"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[5.9       You and any Authorised Driver must take reasonable care of the Vehicle by:
+(a)        preventing it from being damaged;
+(b)        making sure that it is protected from the weather;
+(c)        maintaining the engine and brake oils and coolant level and tyre pressures and checking these no less than on a weekly basis;
+(d)        using the correct fuel type; and
+(e)        making sure it is not overloaded.
+5.10      If the Vehicle develops a fault during the Rental Period You must inform Us immediately and not drive the Vehicle unless We have authorised You to do so and You must not let anyone else repair or work on the Vehicle or towing or salvage of it without Our prior written authority to do so.
+]]></text>
+			</staticText>
+		</band>
+		<band height="130">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="130" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[5.11      Where We have given You Our prior authority to repair the Vehicle You must keep and produce to Us the original tax invoices and receipts for any repairs, towing or salvage and You will be reimbursed only if these expenses have been authorised by Us. Any entitlement to reimbursement is subject to there being no Major Breach of the Rental Contract.
+(a)   Long term rental contracts can be cancelled at any time by either party. Notification in writing must be provided 4 weeks prior to the return of the vehicle. CERTIFIED AUTOS reserves the right to charge a cancellation fee of 0.5% of the outstanding agreement or 8 weeks rental, whichever is the lesser amount.
+(b)   All long term rental contracts must be paid by direct debit from your nominated bank account.
+(c)    All payments must be paid by direct debit. A late payment fee of $30 will be added to all dishonoured debits. CERTIFIED AUTOS reserves the right to cancel contracts with rental arrear in excess of 14 days.
+]]></text>
+			</staticText>
+		</band>
+		<band height="110">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[6          Damage Cover]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="19" width="534" height="91" uuid="f1c4fc28-137b-4041-8307-a8e4323dcebf"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[6.1       Damage Cover is included in the Rental Charges. Subject to these Terms and Conditions, if You or any Authorised Driver has an Accident or if the Vehicle is stolen We will indemnify You for the theft, any Damage or Third Party Loss but You must pay up to the Damage Excess shown on the Rental Agreement for each Accident or theft unless We agree that:
+(a)        You were not at fault; and
+(b)        the other party’s insurance company accepts liability.
+6.2       You may reduce the Damage Excess payable under clause 6.1 by payment of additional daily charge, as shown on the Rental Agreement.]]></text>
+			</staticText>
+		</band>
+		<band height="119">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="119" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[6.3       The Damage Excess payable under clause 6.1 will not be charged to Your credit card:
+(a)        for single vehicle Accidents, until a repairer's estimate or tax invoice verifying the amount charged for Damage has been sent to You;
+(b)        if the Vehicle has been stolen, until We have made reasonable enquiries and in Our opinion it is unlikely the Vehicle will be recovered; and
+(c)        for Accidents in which there is also Third Party Loss, until:
+(i)         a reasonable estimate of the Third Party Loss has been made;
+(ii)        a repairer's estimate or tax invoice verifying the amount charged for Damage has been obtained; and
+(iii)      all documents verifying the Third Party Loss and Damage have been sent to You, unless You have expressly authorised the charge to Your credit card at an earlier time.]]></text>
+			</staticText>
+		</band>
+		<band height="99">
+			<staticText>
+				<reportElement x="-1" y="0" width="535" height="99" uuid="b77c6750-8e75-4a62-aca9-889e23070b2d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[6.4       There is no Damage Cover, and You and any Authorised Driver are liable for:
+(a)        Damage or Third Party Loss arising from:
+(i)         a Major Breach of the Rental Contract; or
+(ii)        the use of the Vehicle by any driver who is not an Authorised Driver or who is less than 21years of age;
+(b)        Overhead Damage;
+(c)        Underbody Damage; and
+(d)        Damage caused by immersion of the Vehicle in water.
+]]></text>
+			</staticText>
+		</band>
+		<band height="110">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="110" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[6.5       There is also no Damage Cover for:
+(a)        the full cost of replacing or repairing any accessories supplied by Us including, but not limited to GPS units, lost keys, keyless start and remote control devices; or
+(b)        personal items that are left in or stolen from the Vehicle or for loss or damage to property belonging to or in the custody of:
+(i)         You;
+(ii)        any relative, friend or associate of Yours ordinarily residing with You or with whom You ordinarily reside;
+(iii)       any relative, friend or associate of an Authorised Driver; or
+(iv)       Your employees.
+]]></text>
+			</staticText>
+		</band>
+		<band height="129">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[7          Rental Period, costs and charges]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="18" width="530" height="111" uuid="aa2b1942-d6c2-4552-9dd5-14df4884524b"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[7.1       The Rental Agreement shows:
+(a)        the Rental Period for which You have hired the Vehicle; and
+(b)        the Rental Charges.
+7.2       We will provide You with a Vehicle that is of acceptable quality and in good working order taking into account the age of the Vehicle
+7.3       A daily limit of 100 kilometres applies and for each day You exceed that limit You will incur an additional fee of 25 cents per kilometre
+7.4       At the End of the Rental You must return the Vehicle on the date and by the time shown in the Rental Agreement. If You fail to return the Vehicle, We may terminate the Rental Contract and if the location of the Vehicle is known, recover it by lawful means or if it is unknown, after making reasonable attempts to contact You, report the Vehicle as stolen to the Police.]]></text>
+			</staticText>
+		</band>
+		<band height="279">
+			<staticText>
+				<reportElement x="2" y="3" width="530" height="67" uuid="401eb3f6-8b49-43b4-9dbd-b9eb03b55faf"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[7.5       If You return the Vehicle:
+(a)        more than one hour after the time set for its return in the Rental Agreement We will charge You $25per hour up to one full day's rental and a further full day's rental at the standard rate for each24 hour period or part thereof until the Vehicle is returned to Us; or
+(b)        at any time, other than during Our normal business hours You must pay for the daily Rental Charges and all Damage until the Rental Location next opens for business.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="74" width="528" height="55" uuid="833669c2-f766-42b8-b218-6016d0be8ebc"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[7.6       At the End of the Rental You must also pay for all amounts owing pursuant to clause 5.4 and any moneys owed to Us thereafter accrue interest at the rate of 10% per annum commencing 14 days after the End of the Rental . Any amount payable under the Rental Contract is subject to subsequent verification and adjustment and details of any adjustments will be provided to You as soon as practicable. If any amount is due to Us or remains unpaid You authorise Us to debit Your credit card with that amount within a reasonable time after the End of the Rental.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="132" width="528" height="58" uuid="161aa202-a658-46eb-84d8-0bc4c66370a0"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[7.7       If You default in the payment of any moneys owed to Us under the Rental Contract, You authorise Us to provide information of that default to a credit reporting body and to obtain an up to date consumer credit report on You. Personal information may be used and disclosed by the credit reporting body in accordance with the Privacy Act to create or maintain a credit information file containing information about You, including defaults in excess of 60 days and the debt owed to Us.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="193" width="535" height="86" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[7.8       Cancellation
+If:
+(a)        Your booking is cancelled within 24 hours prior to the Start of the Rental; or
+(b)        You fail to notify Us of Your intended cancellation prior to the Start of the Rental and fail to pick up the Vehicle,
+You will be charged the Rental Charges for the Rental Period as booked unless We are able to rent the Vehicle to another renter for an equivalent term and rate.
+]]></text>
+			</staticText>
+		</band>
+		<band height="220">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[8          Accidents or breakdowns]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="20" width="532" height="70" uuid="1a7c684f-4596-4747-8b68-e5d5e283e480"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[8.1       If You have a breakdown or Accident You must contact Us on 1300 295 105 and We will provide all practical assistance as soon as practicable.
+8.2       We will provide You with a Vehicle that is of acceptable quality and in good working but breakdowns do occur. If the Vehicle breaks down during the Rental Period because of Our negligence We will recover and repair the Vehicle as soon as possible. If the Vehicle cannot be repaired We will use Our best endeavours to provide a replacement Vehicle where one is available.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="93" width="528" height="96" uuid="8a759407-2b59-4b13-836d-8a46d43fd4ea"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[8.3       We are not responsible for:
+(a)        Damage as a result of use of the incorrect fuel type;
+(b)        a flat battery because the lights or entertainment systems have been left on;
+(c)        tyre changing;
+(d)        lost keys or remote control device; or
+(e)        keys or remote control device locked in the Vehicle,
+and extra charges will apply if any of these services are provided at Your request.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="193" width="528" height="27" uuid="c8430604-4904-410b-8b1e-21ac94fba403"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[8.4       If You or an Authorised Driver has an Accident or if the Vehicle is stolen You must report the Accident or theft to Us within 24 hours of it occurring and fully complete an Accident/Theft report form.]]></text>
+			</staticText>
+		</band>
+		<band height="70">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="70" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[8.5       If the Vehicle is stolen or if You or an Authorised Driver of the Vehicle has an Accident where:
+(a)        any person is injured;
+(b)        the other party has failed to stop or leaves the scene of the Accident without exchanging names and addresses; or
+(c)        the other party appears to be under the influence of drugs or alcohol,
+You or the Authorised Driver must also report the theft or Accident to the Police.]]></text>
+			</staticText>
+		</band>
+		<band height="190">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="70" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[8.6       If You or an Authorised Driver has an Accident You and the Authorised Driver must:
+(a)        exchange names and addresses and telephone numbers with the other driver;
+(b)        take the registration numbers of all vehicles involved;
+(c)        take as many photos as is reasonable showing:
+(i)         the position of the Vehicles before they are moved for towing or salvage;]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="73" width="534" height="67" uuid="434810e8-0d8e-4a83-a498-1793aaf207de"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[(ii)        the Damage to the Vehicle;
+(iii)       the damage to any third party vehicle or property; and
+(iv)       the general area where the Accident occurred, including any road or traffic signs;
+(d)        obtain the names, addresses and phone numbers of all witnesses;
+(e)        not make any admission of fault or promised to pay the other party's claim or release the other party from any liability;]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="142" width="535" height="48" uuid="c22017d5-dfda-4eb0-b157-31e21840212b"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[(f) forward all third party correspondence or court documents to Us within 7 days of receipt; and
+(g) co-operate with Us in the prosecution of any legal proceedings that We may institute or defence of any legal proceedings which may be instituted against You or Us as a result of an Accident, including attending Our lawyer's office or any Court hearing.
+]]></text>
+			</staticText>
+		</band>
+		<band height="16">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[9          Toll Road Charges]]></text>
+			</staticText>
+		</band>
+		<band height="39">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="39" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[9.1       you must supply your own etag, all tolls that arrive to certified autos will atract a $15 fee
+9.2       For your safety and to reduce our insurance cost our vehicles are fitted with a GPS locating devices, removal of this device is a breach of the (Rental Agreement)
+]]></text>
+			</staticText>
+		</band>
+		<band height="16">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[10        Consequences of a Major Breach of the Rental Contract]]></text>
+			</staticText>
+		</band>
+		<band height="130">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="130" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="0.0"/>
+				</textElement>
+				<text><![CDATA[10.1      If You or any Authorised Driver:
+(a)        commit a Major Breach of the Rental Contract in a way that causes Damage, theft of the Vehicle or Third Party Loss; or
+(b)        drive the Vehicle in a reckless manner so that a substantial breach of road safety legislation, has occurred,
+You and any Authorised Driver:
+(i)         have no Damage Cover;
+(ii)        are liable for all Damage, theft of the Vehicle and Third Party Loss; and
+(iii)       are liable for and must pay any additional costs or expenses We incur as direct consequence.
+10.2      Acting unreasonably, We may terminate the Rental Contract and take immediate possession of the Vehicle if a breach of any part of clause 10.1 has occurred.
+]]></text>
+			</staticText>
+		</band>
+		<band height="16">
+			<staticText>
+				<reportElement x="1" y="0" width="535" height="16" uuid="deeeefa7-7c3d-4e7e-8680-6a8fddd4a499">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[11        Definitions]]></text>
+			</staticText>
+		</band>
+		<band height="270">
+			<staticText>
+				<reportElement x="1" y="0" width="48" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Accident]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="0" width="487" height="79" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[means an unintended and unforeseen incident, including:
+(a)        a collision between the Vehicle and another vehicle or object, including animals and roadside infrastructure;
+(b)        rollovers; or
+(c)        a weather event, including hail Damage,
+that results in Damage or Third Party Loss.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="83" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Administrative Fee ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="83" width="430" height="15" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means a fee of up to $55 including GST for the administrative costs associated with Your rental.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="104" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Authorised Driver ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="104" width="430" height="24" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means any driver of the Vehicle who is approved by Us and who is recorded on the Rental Agreement prior to the Start of the Rental.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="133" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Commitment Fee ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="133" width="430" height="30" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means the amount shown on the Rental Agreement We collect from You at the Start of the Rental as security for the Rental Charges and other fees and charges incurred during Your rental.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="166" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Damage means:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="166" width="430" height="104" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[(a)        any loss or damage to the Vehicle including its parts, components and accessories, including the GPS unit, that is not fair wear and tear;
+(b)        towing and salvage costs;
+(c)        assessing fees; and
+(d)        Loss of Use,
+and for the removal of doubt, any Damage to the windscreen, headlights, lights or tyres that makes the Vehicle unroadworthy is not fair wear and tear.
+				
+]]></text>
+			</staticText>
+		</band>
+		<band height="389">
+			<staticText>
+				<reportElement x="-3" y="5" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Damage Excess ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="5" width="430" height="28" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means the amount, including GST, up to which You must pay Us in the event of an Accident that causes Damage or Third Party Loss or the Vehicle has been stolen.				
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="73" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[GPS Device ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="73" width="430" height="15" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means a GPS or other device that is fitted to the Vehicle that has electronic tracking capabilities.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="95" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Loss of Use]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="95" width="430" height="30" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means Our loss calculated on a daily basis at the daily rate shown in the Rental Agreement because the Vehicle is being repaired or replaced if it is written off as a result of an Accident or it has been stolen.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Major Breach]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="130" width="430" height="30" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means a breach of any of clauses, 2.1, 2.3, 2.4, 2.5, 3.1, 3.2, 3.3, 4.1, 4.2, 4.3, 5.8, 5.9, 5.10 or 5.12 that causes Damage, theft of the Vehicle or Third Party Loss.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="166" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Off Road ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="166" width="430" height="40" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[means any area that is neither a sealed or unsealed road and includes but is not limited to unformed roads, fire trails, tracks, river and tidal crossings, creek beds, beaches, streams, dams, rivers, flood waters, sand, deserts, rocks, fields and paddocks.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="210" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Overhead Damage means:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="214" width="430" height="95" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[(a)        Damage at or above the level of the top of the front windscreen of the Vehicle; or
+(b)        Third Party Loss,
+caused by:
+(i)              contact between the part of the Vehicle that is at or above the level of the top of the front windscreen with objects overhanging or obstructing its path;
+(ii)            objects being placed on the roof of the Vehicle; or
+(iii)           You or any person standing or sitting on the roof of the Vehicle.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="313" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Rental Charges ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="313" width="430" height="30" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means the charges payable for renting the Vehicle from Us together with GST and any other taxes or levies which are all fully set out in the Rental Agreement.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="347" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Rental Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="347" width="430" height="15" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means the location from which the Vehicle was rented, as shown on the Rental Agreement.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="367" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Rental Period]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="367" width="430" height="22" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means the period commencing at the time shown in the Rental Agreement and concluding at the End of the Rental.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="38" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[End of the Rental]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="38" width="430" height="30" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means the date and time shown in the Rental Agreement or the date and time the Vehicle is returned to Us, whichever is the later.]]></text>
+			</staticText>
+		</band>
+		<band height="168">
+			<staticText>
+				<reportElement x="105" y="8" width="430" height="15" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means the date and time that the rental commences as shown in the Rental Agreement.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="8" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Start of the Rental]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="30" width="430" height="14" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means loss or damage to third party property, including other motor vehicles and any claim for third party loss of income.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Third Party Loss ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="52" width="430" height="47" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[means any damage to the Vehicle caused by or resulting from contact between the underside of the Vehicle and any part of the roadway or any object or obstruction, including kerbs, gutters, speed or road humps, barriers or wheel stops and does not arise as a result of an impact with another vehicle.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Underbody Damage ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="104" width="430" height="30" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[means the Vehicle described in the Rental Agreement and includes its parts, components and accessories, including the GPS unit.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="105" height="15" uuid="e00d9dff-f977-494a-bd36-3a289b1c113d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Vehicle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="138" width="534" height="30" uuid="ea42b120-8c81-4f47-a73d-7a398c5a2b6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[We, Us, Our, means CERTIFIED AUTOS ABN 95 601 048 515 You, Your means the person, whether it is an individual, a firm or company that rents the Vehicle from Us and whose name is shown in the Rental Agreement.
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17">
+			<textField evaluationTime="Master">
+				<reportElement x="436" y="3" width="100" height="14" uuid="8ae4f8b2-e4f0-48c6-9ec2-dac28a14ae51"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{MASTER_CURRENT_PAGE}  + "/" + $V{MASTER_TOTAL_PAGES}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

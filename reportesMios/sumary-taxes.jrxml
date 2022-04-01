@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="conr" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="0" rightMargin="40" topMargin="0" bottomMargin="0" uuid="88836fa6-4f03-4d6d-ac2d-726347a287d9">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="sumary_detail_name" class="java.lang.String"/>
+	<field name="sumary_detail_detail" class="java.lang.String"/>
+	<field name="sumary_detail_subtotal" class="java.lang.Double"/>
+	<variable name="tax_total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumary_detail_subtotal}]]></variableExpression>
+	</variable>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="219" height="15" uuid="c78ce6fb-fdac-47bd-b5a6-7193e761c385">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumary_detail_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="179" height="15" uuid="c0a326a1-582a-4756-b9dc-a4cf44c9baa1">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumary_detail_detail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="108" height="15" uuid="31403c88-7617-40e7-8c75-4b25f70d5c0d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$"+$F{sumary_detail_subtotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

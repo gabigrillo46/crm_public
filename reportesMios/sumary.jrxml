@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="conr" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="20" bottomMargin="20" uuid="88836fa6-4f03-4d6d-ac2d-726347a287d9">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<parameter name="nombre_cliente" class="java.lang.String"/>
+	<parameter name="reservation_no" class="java.lang.Integer"/>
+	<parameter name="booking_status" class="java.lang.String"/>
+	<parameter name="vehicle" class="java.lang.String"/>
+	<parameter name="auto_rego" class="java.lang.String"/>
+	<parameter name="pickup" class="java.lang.String"/>
+	<parameter name="dropoff" class="java.lang.String"/>
+	<parameter name="entered_by" class="java.lang.String"/>
+	<parameter name="date_entered" class="java.lang.String"/>
+	<parameter name="source_by" class="java.lang.String"/>
+	<parameter name="rate_detail" class="java.lang.String"/>
+	<parameter name="rate_total" class="java.lang.String"/>
+	<parameter name="kms_out" class="java.lang.Long"/>
+	<parameter name="balance_due" class="java.lang.Float"/>
+	<parameter name="renter_name" class="java.lang.String"/>
+	<parameter name="renter_email" class="java.lang.String"/>
+	<parameter name="licence_no" class="java.lang.String"/>
+	<parameter name="expiry_date" class="java.lang.String"/>
+	<parameter name="dob" class="java.lang.String"/>
+	<parameter name="Parameter1" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="phone" class="java.lang.String"/>
+	<parameter name="Parameter2" class="java.lang.String"/>
+	<parameter name="mobile" class="java.lang.String"/>
+	<parameter name="date_printed" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\tools\\jasperreports-5.0.1\\test\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gran_total" class="java.lang.Float"/>
+	<parameter name="notaContrato" class="java.lang.String"/>
+	<parameter name="kms_in" class="java.lang.Long"/>
+	<parameter name="travelled" class="java.lang.Long"/>
+	<parameter name="gst" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="taxesDetail" class="java.util.List"/>
+	<field name="paymentDetail" class="java.util.List"/>
+	<field name="paymentTypeDetail" class="java.util.List"/>
+	<title>
+		<band height="233" splitType="Stretch">
+			<textField>
+				<reportElement x="227" y="0" width="101" height="15" uuid="dc26769d-fb89-4cc9-a59a-7c9427c3c993">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Booking Details"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="16" width="180" height="15" uuid="eb34a551-aaab-4389-a90e-7a4f3a931449">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date Printed: " +$P{date_printed}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="16" width="100" height="15" uuid="bad8fc4c-ea93-4e39-a40f-181b38d16dc1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reservation_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="31" width="510" height="28" uuid="b7edb52b-28f5-4065-8d6f-2e04fad452a3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="20" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="61" width="160" height="15" uuid="3d7bad15-6417-4cc1-b890-b9141cd6ed50">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Reservation No.: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="77" width="160" height="15" uuid="25511803-9430-4e29-88c1-d963e4ef0c8e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["BookingStatus: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="92" width="160" height="15" uuid="ad40a3e2-68d4-45e7-8b79-2f857bb7225d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vehicle: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="108" width="160" height="15" uuid="8e9581fc-1f69-4c3b-854f-3372c8dce7c1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PickUp: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="124" width="160" height="15" uuid="90b45f56-706a-4259-8a4a-652cd43b9ed2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dropoff: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="140" width="160" height="15" uuid="12e4942e-da71-44d9-82fe-b5c55e9730d7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Entered By: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="156" width="160" height="15" uuid="3e1a722f-fb05-40bb-97ea-f21d888efe48">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sourced By: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="124" width="348" height="15" uuid="75b7c566-9a5d-40e2-99fb-6701218eb6dc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dropoff}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="108" width="348" height="15" uuid="0d84524d-eb9c-4678-9319-94a8c4de57f8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pickup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="77" width="348" height="15" uuid="4de78a16-5fd3-4f8d-9e59-a081a851680e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{booking_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="61" width="348" height="15" uuid="d9b81aaf-132d-4120-9946-56b09b04f477">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reservation_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="156" width="348" height="15" uuid="0e0ab31f-699a-4dc2-bbfd-210b0eb95032">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{source_by}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="140" width="228" height="15" uuid="fd6c21df-99d5-4552-b59c-1eab8dd74f3b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{entered_by}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="92" width="174" height="15" uuid="fe5957cf-3b75-43fa-9525-08e0c8ea29e3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vehicle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="92" width="174" height="15" uuid="6919d787-12aa-4aa7-a58f-9196f235cc16">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Auto		rego# :" + $P{auto_rego}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="140" width="118" height="15" uuid="b339192a-8c73-4c40-bc89-08235abca61d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date entered: " + $P{date_entered}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="181" width="108" height="15" uuid="2ad124fa-8249-4378-b121-4fdd03504742">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rate_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="181" width="164" height="15" uuid="19efdb9f-a5de-4fe4-b4be-81e3ace283ac">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{rate_detail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="181" width="160" height="15" uuid="d7f1c1de-cca3-4d95-b8a9-21a6f04c27d9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Rate"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="200" width="160" height="15" uuid="c40dc960-a179-4d3d-af5b-c68ea69e9cfb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Kms Out: "  + $P{kms_out}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="200" width="160" height="15" uuid="6b23b9fc-5611-463b-9f77-5f7d847ca694">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Kms In:  "+$P{kms_in}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="218" width="227" height="15" uuid="7d95a256-e017-4d71-b627-390cdc7a7a11">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Distance travelled:  "+$P{travelled}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="70" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="6" width="508" height="64" uuid="74faee2e-d5d1-421a-aa69-b2c1769ac85b"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+                  ($F{taxesDetail})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "sumary-taxes.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<textField>
+				<reportElement x="0" y="0" width="240" height="20" uuid="df5819cb-4200-4a16-9c41-91166f07187a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total Cost"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="354" y="0" width="154" height="20" uuid="6310d00a-f575-40a3-8f80-29b7f82fab58"/>
+				<box leftPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Au $" + $P{gran_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="354" y="20" width="154" height="20" uuid="77d48f2c-f7d2-4229-bb1b-2442db71b53f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$P{gst}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<textField>
+				<reportElement x="60" y="0" width="400" height="30" uuid="ccbffb22-bac7-4166-a621-4cea0ec7a3bc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{notaContrato}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement x="0" y="6" width="509" height="44" uuid="415743fe-7ea6-4c18-b017-50ca7a93b5c7"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+                  ($F{paymentDetail})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "sumary-payment-details.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20">
+			<textField>
+				<reportElement x="357" y="0" width="154" height="20" uuid="73144a23-8198-4ecb-9bc6-38f8b4658ccf"/>
+				<box leftPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Au $" + $P{balance_due}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="240" height="20" uuid="7b95ac00-f664-4f91-b563-1d99d0c1c96b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Balance Due:"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="106">
+			<textField>
+				<reportElement x="0" y="0" width="160" height="15" uuid="a858289f-d8ed-4293-a7f6-05e001031a79">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Costumer information"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="15" width="348" height="15" uuid="cdc4518b-c363-4fae-aa25-e31474c22342">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{renter_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="15" width="160" height="15" uuid="4508d4b2-c5d4-4ea7-96ee-1a28186762c6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Renter's Name: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="30" width="160" height="15" uuid="81e15a4a-44b3-4d9e-aac4-01e236f7ab10">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Renter's Email Address: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="30" width="348" height="15" uuid="356abcfe-448f-4cd5-9718-6da6697a78d8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{renter_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="45" width="189" height="15" uuid="f759503b-6164-47d8-b107-30e5879da208">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{licence_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="45" width="160" height="15" uuid="cfd5e137-c454-4003-b9b8-8b3967582a90">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Licence No.: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="46" width="147" height="15" uuid="07e8779b-0913-498b-a208-c120abd13a1a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Expiry Date:  " + $P{expiry_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="61" width="348" height="15" uuid="0525354f-7327-4d93-8e6e-28f1d66d475b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="61" width="160" height="15" uuid="2ceac66a-5d78-42d7-ab8f-5de8aa0cc9bb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DOB: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="76" width="160" height="15" uuid="aaf00594-4e29-4d5f-b4d4-d4b54f7bfe28">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Address: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="76" width="348" height="15" uuid="2be90819-28b0-45d1-8fd4-42ca749ddf96">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="90" width="160" height="15" uuid="e285f3da-e47f-494d-b5b1-3bf8d82799da">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Phone: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="90" width="189" height="15" uuid="99c2bad4-f024-4029-afd4-1ad47fc83662">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="91" width="147" height="15" uuid="0acaee91-66db-495e-9137-84cf391d49b6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Mobile:  " + $P{mobile}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50">
+			<subreport>
+				<reportElement x="0" y="6" width="510" height="44" uuid="4f10dc80-847e-409b-9c22-b0448f977ae2"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+                  ($F{paymentTypeDetail})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "sumary-payment-type.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>
